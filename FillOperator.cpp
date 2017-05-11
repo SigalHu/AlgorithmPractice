@@ -11,17 +11,17 @@ bool getResult(string eval,double *result){
     smatch resm;
     regex rep("[+-]?\\d+(\\.\\d+)?");
     regex_search(eval,resm,rep);
-    ss<<resm[0];
+    ss<<resm.str();
     ss>>*result;
     ss.clear();
     eval = resm.suffix().str();
 
     while(regex_search(eval,resm,rep)){
-        ss<<resm[0];
+        ss<<resm.str();
         ss>>dbl;
         ss.clear();
 
-        if(eval[0] == '*')
+        if(resm.prefix().str() == "*")
             *result *= dbl;
         else{
             if(!dbl)
@@ -62,7 +62,7 @@ int main() {
 
                     strTmp = strData;
                     while(regex_search(strTmp,resm,rep)){
-                        isSucceed = getResult(resm[0].str(),&dblTmp);
+                        isSucceed = getResult(resm.str(),&dblTmp);
                         if(isSucceed)
                             dblRes += dblTmp;
                         else
