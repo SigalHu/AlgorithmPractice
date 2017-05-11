@@ -9,7 +9,7 @@ bool getResult(string eval,double *result){
     stringstream ss;
     double dbl;
     smatch resm;
-    regex rep("\\+\\d+(\\.\\d+)?");
+    regex rep("[+-]?\\d+(\\.\\d+)?");
     regex_search(eval,resm,rep);
     ss<<resm[0];
     ss>>*result;
@@ -37,7 +37,7 @@ int main() {
     array<double,6> arrDataIn;
     array<string,4> arrOperator={"+","-","*","/"};
 
-    cout << "ÇëÊäÈë6¸öÊı×Ö£º";
+    cout << "è¯·è¾“å…¥6ä¸ªæ•°å­—ï¼š";
     for(double &data:arrDataIn){
         cin>>data;
     }
