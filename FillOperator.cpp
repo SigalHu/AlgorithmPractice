@@ -37,7 +37,7 @@ int main() {
     array<double,6> arrDataIn;
     array<string,4> arrOperator={"+","-","*","/"};
 
-    cout << "è¯·è¾“å…¥6ä¸ªæ•°å­—ï¼š";
+    cout << "ÇëÊäÈë6¸öÊı×Ö£º";
     for(double &data:arrDataIn){
         cin>>data;
     }
